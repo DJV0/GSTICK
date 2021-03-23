@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace GSTICK.Interfaces
 {
-    interface IGenericRepository<T> where T: class 
+    public interface IGenericRepository<T> where T: class 
     {
-        IEnumerable<T> GetAll();
+        Task<List<T>> GetAllAsync();
         T GetById(int id);
     }
 }

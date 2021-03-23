@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace GSTICK.Data
 {
@@ -15,9 +16,9 @@ namespace GSTICK.Data
             _context = context;
         }
 
-        public IEnumerable<T> GetAll()
+        public Task<List<T>> GetAllAsync()
         {
-            return _context.Set<T>().ToList();
+            return _context.Set<T>().ToListAsync();
         }
 
         public T GetById(int id)
