@@ -1,4 +1,5 @@
 using GSTICK.Data;
+using GSTICK.Interfaces;
 using GSTICK.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,6 +48,8 @@ namespace GSTICK
             services.Configure<AuthMessageSenderOptions>(Configuration);
 
             services.AddRazorPages();
+
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
