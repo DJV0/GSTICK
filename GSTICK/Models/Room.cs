@@ -22,6 +22,6 @@ namespace GSTICK.Models
 
         public decimal Price { get; set; }
 
-        public ICollection<Image> Images { get; set; }
+
     }
 }
