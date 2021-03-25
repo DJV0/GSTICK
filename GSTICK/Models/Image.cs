@@ -7,21 +7,14 @@ using System.Threading.Tasks;
 
 namespace GSTICK.Models
 {
-    public class Room
+    public class Image
     {
         [Key]
         public int Id { get; set; }
 
-        [Column(TypeName ="varchar(255)")]
+        [Column(TypeName ="nvarchar(100)")]
         public string Name { get; set; }
+        public bool? IsHead { get; set; }
 
-        [DataType(DataType.Text)]
-        public string Description { get; set; }
-
-        public byte PlayerNumber { get; set; }
-
-        public decimal Price { get; set; }
-
-        public ICollection<Image> Images { get; set; }
     }
 }
