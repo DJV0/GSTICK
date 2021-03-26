@@ -17,15 +17,6 @@
                 @Html.DisplayNameFor(model => model.Room[0].Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Room[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Room[0].PlayerNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Room[0].Price)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Room[0].Images)
             </th>
             <th></th>
@@ -38,21 +29,10 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlayerNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
                 <img src="@("~/images/"+item.Images.Find(image => image.IsHead == true).Name)" alt="@(item.Images.Find(image => image.IsHead == true).Name)" asp-append-version="true" width="100px" height="100px"/>
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
             </td>
         </tr>
 }

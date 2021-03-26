@@ -20,8 +20,12 @@ namespace GSTICK.Data.Repositories
             return _context.Rooms.Include(r => r.Images).ToListAsync();
         }
 
-        public Task<Room> GetRoomWithImagesByIdAsync(int id)
+        public Task<Room> GetRoomWithImagesByIdAsync(int? id)
         {
+            if(id == null)
+            {
+                return null;
+            }
             return _context.Rooms.Include(r => r.Images).FirstOrDefaultAsync(r => r.Id == id);
         }
     }

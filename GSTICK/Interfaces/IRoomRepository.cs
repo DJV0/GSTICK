@@ -9,6 +9,6 @@ namespace GSTICK.Interfaces
     public interface IRoomRepository : IGenericRepository<Room>
     {
         Task<List<Room>> GetRoomsWithImagesAsync();
-        Task<Room> GetRoomWithImagesByIdAsync(int id);
+        Task<Room> GetRoomWithImagesByIdAsync(int? id);
     }
 }
