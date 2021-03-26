@@ -1,5 +1,6 @@
 ﻿using GSTICK.Interfaces;
 using GSTICK.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,16 @@ namespace GSTICK.Data.Repositories
         public RoomRepository(ApplicationDbContext context) : base(context)
         {
 
+        }
+
+        public Task<List<Room>> GetRoomsWithImagesAsync()
+        {
+            return _context.Rooms.Include(r => r.Images).ToListAsync();
+        }
+
+        public Task<Room> GetRoomWithImagesByIdAsync(int id)
+        {
+            return _context.Rooms.Include(r => r.Images).FirstOrDefaultAsync(r => r.Id == id);
         }
     }
 }

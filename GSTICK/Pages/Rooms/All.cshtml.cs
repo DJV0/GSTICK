@@ -24,7 +24,7 @@ namespace GSTICK.Pages.Rooms
 
         public async Task OnGetAsync()
         {
-            Room = await _context.GetAllAsync();
+            Room = await _context.GetRoomsWithImagesAsync();
         }
     }
 }
