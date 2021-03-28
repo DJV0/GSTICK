@@ -2,39 +2,23 @@
 @model GSTICK.Pages.Rooms.RoomsModel
 
 @{
-    ViewData["Title"] = "Rooms";
+    ViewData["Title"] = "Комнаты";
 }
+<link rel="stylesheet" href="~/css/rooms.css" />
 
-<h1>Rooms</h1>
+<div class="rooms">
+    <h3 class="rooms__title">Комнаты</h3>
+    <div class="rooms__list">
+        @for (int i = 0; i < 4; i++)
+        {
+        @foreach (var room in Model.Room)
+        {
+            <div class="rooms__room room">
+                <img src=@("~/images/"+room.Images.Find(image => image.IsHead == true).Name) alt="@(room.Images.Find(image => image.IsHead == true).Name)" class="room__image" asp-append-version="true">
+                <a asp-page="./Details" asp-route-id="@room.Id" class="room__name stretched-link">@room.Name</a>
+            </div>
+        }
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Room[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Room[0].Images)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Room) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <img src="@("~/images/"+item.Images.Find(image => image.IsHead == true).Name)" alt="@(item.Images.Find(image => image.IsHead == true).Name)" asp-append-version="true" width="100px" height="100px"/>
-            </td>
-            <td>
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        }
+    </div>
+</div>

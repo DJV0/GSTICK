@@ -1,0 +1,62 @@
+.rooms__title {
+    font-family: 'Alegreya Sans SC',
+        sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 28px;
+    letter-spacing: 3px;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.rooms__title::after {
+    display: inline-block;
+    content: "";
+    width: 135px;
+    height: 5px;
+    border-radius: 1px;
+    background-color: #d96523;
+    margin-top: -5px;
+}
+
+.rooms__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rooms__list .room:nth-child(4n) {
+    margin-right: 0;
+}
+
+.room {
+    /*max-width: 23.5%;*/
+    flex: 1 1 22.5%;
+    background-color: #020659;
+    margin-right: 2%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.room__image {
+    width: 100%;
+}
+
+.room__name {
+    font-family: 'Alegreya Sans SC',
+        sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 42px;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 10px 0;
+    display: block;
+}
