@@ -1,0 +1,24 @@
+﻿@page
+@model GSTICK.Pages.Rooms.RoomsModel
+
+@{
+    ViewData["Title"] = "Комнаты";
+}
+<link rel="stylesheet" href="~/css/rooms.css" />
+
+<div class="rooms">
+    <h3 class="rooms__title">Комнаты</h3>
+    <div class="rooms__list">
+        @for (int i = 0; i < 4; i++)
+        {
+        @foreach (var room in Model.Room)
+        {
+            <div class="rooms__room room">
+                <img src=@("~/images/"+room.Images.Find(image => image.IsHead == true).Name) alt="@(room.Images.Find(image => image.IsHead == true).Name)" class="room__image" asp-append-version="true">
+                <a asp-page="./Details" asp-route-id="@room.Id" class="room__name stretched-link">@room.Name</a>
+            </div>
+        }
+
+        }
+    </div>
+</div>

@@ -1,0 +1,113 @@
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+._container {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.page {
+    background-image: url("../img/rooms-back.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 68px;
+    padding-bottom: 110px;
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Alegreya Sans SC',
+        sans-serif;
+}
+
+.header__column {
+    flex: 1 3 20%;
+}
+
+.header__column:nth-child(2) {
+    flex: 3 1 60%;
+}
+
+.header__column:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header__logo {
+    display: inline-block;
+}
+
+.menu__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.menu__list>li {
+    display: inline-block;
+    padding: 0 5.5%;
+}
+
+.menu__link {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 30px;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.header__sign-in {
+    border-radius: 21px;
+    border: solid 1.2px #d02236;
+    padding: 2px 31px 2px;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 29px;
+    color: #f7f7f7;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/**** Footer ****/
+/*footer {
+    background-color: #0d0d0d;
+    padding-top: 19px;
+    clear: both;
+    margin-top: -64px;
+    height: 64px;
+}*/
+
+.footer__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__logo>img {
+    width: 100px;
+    height: 30px;
+}
+
+.footer__copyright {
+    font-family: 'Alegreya Sans SC',
+        sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #bfbfbf;
+}
+
+.social-media__content>img:nth-child(3n-1) {
+    margin-left: 10px;
+    margin-right: 10px;
+}

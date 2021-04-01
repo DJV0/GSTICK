@@ -5,42 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GSTICK</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300;500&family=IBM+Plex+Sans:wght@200;300;400;600;700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/layout.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">GSTICK</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    @*<header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">GSTICK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <partial name="_LoginPartial" />
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>*@
+    <div class="wrapper">
+        <div class="page">
+            <header class="header">
+                <div class="header__content _container">
+                    <div class="header__column">
+                        <a asp-area="" asp-page="/Index" class="header__logo">
+                            <img src="~/img/logo1.svg" width="158" height="48"
+                                 alt="logo">
+                        </a>
+                    </div>
+                    <div class="header__column">
+                        <div class="header__menu menu">
+                            <nav class="menu__body">
+                                <ul class="menu__list">
+                                    <li><a asp-page="/Rooms/All" class="menu__link">Комнаты</a></li>
+                                    <li><a href="games.html" class="menu__link">Игротека</a></li>
+                                    <li><a href="" class="menu__link">Меню</a></li>
+                                    <li><a href="contacts.html" class="menu__link">Контакты</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <partial name="_LoginPartial" />
+                </div>
+            </header>
+            <div class="page__content _container">
+                @RenderBody()
+            </div>
+        </div>
+        @*<div class="clr"></div>*@
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - GSTICK - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="footer">
+        <div class="footer__content _container">
+            <div class="footer__logo"><img src="~/img/logo1.svg" alt="logo"></div>
+            <div class="footer__copyright">© 2020 Copyright Gameplay cyber club. All rights reserved.</div>
+            <div class="footer__social-media social-media">
+                <div class="social-media__content">
+                    <img src="~/img/social-insta.svg" alt="instagram">
+                    <img src="~/img/social-facebook.svg" alt="facebook">
+                    <img src="~/img/social-telegram.svg" alt="telegram">
+                </div>
+            </div>
         </div>
     </footer>
+
+
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
