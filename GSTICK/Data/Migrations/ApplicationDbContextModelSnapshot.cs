@@ -321,13 +321,13 @@ namespace GSTICK.Data.Migrations
             modelBuilder.Entity("GSTICK.Models.GameCategory", b =>
                 {
                     b.HasOne("GSTICK.Models.Category", "Category")
-                        .WithMany("GameCategories")
+                        .WithMany("Games")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("GSTICK.Models.Game", "Game")
-                        .WithMany("GameCategories")
+                        .WithMany("Categories")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

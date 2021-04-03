@@ -22,6 +22,14 @@ namespace GSTICK.Data
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
             modelbuilder.Entity<GameCategory>().HasKey(gc => new { gc.GameId, gc.CategoryId });
+            modelbuilder.Entity<GameCategory>()
+                .HasOne(gc => gc.Game)
+                .WithMany(gc => gc.Categories)
+                .HasForeignKey(gc => gc.GameId);
+            modelbuilder.Entity<GameCategory>()
+                .HasOne(gc => gc.Category)
+                .WithMany(gc => gc.Games)
+                .HasForeignKey(gc => gc.CategoryId);
             base.OnModelCreating(modelbuilder);
         }
     }

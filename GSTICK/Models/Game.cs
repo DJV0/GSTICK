@@ -20,6 +20,6 @@ namespace GSTICK.Models
         public byte PlayerNumber { get; set; }
 
         public List<Image> Images { get; set; } = new List<Image>();
-        public IList<GameCategory> GameCategories { get; set; }
+        public List<GameCategory> Categories { get; set; } = new List<GameCategory>();
     }
 }

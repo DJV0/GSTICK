@@ -15,6 +15,6 @@ namespace GSTICK.Models
         [Column(TypeName = "varchar(255)")]
         public string Name { get; set; }
 
-        public IList<GameCategory> GameCategories { get; set; }
+        public List<GameCategory> Games { get; set; } = new List<GameCategory>();
     }
 }
