@@ -1,0 +1,15 @@
+﻿@model Models.Game
+
+<div class="modal-body__content game-details">
+    <div class="game-details__image">
+        <img src=@(Url.Content("~/images/"+Model.Images.Where(image => image.IsHead == null).FirstOrDefault().Name)) alt=@(Model.Images.Where(image => image.IsHead == null).FirstOrDefault().Name))>
+    </div>
+    <div class="game-details__content">
+        <h5 class="game-details__title">@(Model.Name)</h5>
+        <p class="game-details__text">@(Model.Description)</p>
+        <p class="game-details__joystick-number">
+            Макс. кол-во джойстиков:
+            <span>@(Model.PlayerNumber)</span>
+        </p>
+    </div>
+</div>

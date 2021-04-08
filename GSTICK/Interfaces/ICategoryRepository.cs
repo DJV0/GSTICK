@@ -8,5 +8,6 @@ namespace GSTICK.Interfaces
 {
     public interface ICategoryRepository : IGenericRepository<Category>
     {
+        Task<List<Category>> GetCategoriesGamesAsync();
     }
 }

@@ -8,5 +8,7 @@ namespace GSTICK.Interfaces
 {
     public interface IGameRepository : IGenericRepository<Game>
     {
+        Task<List<Game>> GetGamesWithImagesAsync();
+        Task<Game> GetGameWithImageByIdAsync(int? id);
     }
 }
