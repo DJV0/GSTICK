@@ -52,6 +52,8 @@ namespace GSTICK
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IRoomRepository, RoomRepository>();
+            services.AddTransient<IGameRepository, GameRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

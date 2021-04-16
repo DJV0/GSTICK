@@ -8,6 +8,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20210321190609_Create_RoomEntity.cs" />
     <Compile Remove="Data\Migrations\20210321190609_Create_RoomEntity.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210402173454_Create_GameCategoryEntities.cs" />
+    <Compile Remove="Data\Migrations\20210402173454_Create_GameCategoryEntities.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,3 +2,25 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+$(document).ready(function () {
+    GetGameDetails = (url) => {
+        try {
+            $.ajax({
+                type: 'GET',
+                url: url,
+                contentType: false,
+                processData: false,
+                success: function (res) {
+                    $('#GameDetailsModal .modal-body').html(res);
+                    $('#GameDetailsModal').modal('show');
+                },
+                error: function (err) {
+                    console.log(err)
+                }
+            })
+            return false;
+        } catch (ex) {
+            console.log(ex)
+        }
+    }
+});
