@@ -46,31 +46,32 @@ namespace GSTICK.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
+            [Required(ErrorMessage = "Не указано имя")]
             [Display(Name = "Имя")]
             public string FirstName { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Не указана фамилия")]
             [Display(Name = "Фамилия")]
             public string LastName { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Не указан номер телефона")]
             [Phone]
             [DataType(DataType.PhoneNumber)]
             [Display(Name = "Номер телефона")]
             public string PhoneNumber { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Не указан email")]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]
+            [Required(ErrorMessage = "Не указан пароль")]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Пароль")]
             public string Password { get; set; }
 
+            [Required(ErrorMessage = "Не указан пароль для подтверждения")]
             [DataType(DataType.Password)]
             [Display(Name = "Подтверждение пароля")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
