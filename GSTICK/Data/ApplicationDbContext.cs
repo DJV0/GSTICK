@@ -13,6 +13,7 @@ namespace GSTICK.Data
         public DbSet<Image> Images { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<LiveOrder> LiveOrders { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
