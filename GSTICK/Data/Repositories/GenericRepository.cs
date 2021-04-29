@@ -16,14 +16,21 @@ namespace GSTICK.Data
             _context = context;
         }
 
-        public Task<List<T>> GetAllAsync()
+        public async Task<T> Add(T entity)
         {
-            return _context.Set<T>().ToListAsync();
+            _context.Set<T>().Add(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public T GetById(int id)
+        public async Task<List<T>> GetAll()
         {
-            return _context.Set<T>().Find(id);
+            return await _context.Set<T>().ToListAsync();
+        }
+
+        public async Task<T> GetById(int id)
+        {
+            return await _context.Set<T>().FindAsync(id);
         }
     }
 }

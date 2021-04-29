@@ -7,7 +7,8 @@ namespace GSTICK.Interfaces
 {
     public interface IGenericRepository<T> where T: class 
     {
-        Task<List<T>> GetAllAsync();
-        T GetById(int id);
+        Task<List<T>> GetAll();
+        Task<T> GetById(int id);
+        Task<T> Add(T entity);
     }
 }

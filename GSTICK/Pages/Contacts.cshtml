@@ -1,0 +1,91 @@
+﻿@page
+@model ContactsModel
+
+@{
+    ViewData["Title"] = "Контакты";
+}
+<link rel="stylesheet" href="~/css/contacts.css"/>
+
+<div class="contacts">
+    <h3 class="contacts__title">Контакты</h3>
+    <div class="contacts__content">
+        <div class="contacts__contact-us contact-us">
+            <h4 class="contact-us__title">Свяжитесь с нами</h4>
+            <div class="contact-us__content">
+                <form class="contact-us__form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-complete="completed">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <input type="text" class="form-control" id="inputName" asp-for="Input.Name" placeholder="Ваше имя"
+                               required>
+                        <span asp-validation-for="Input.Name" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <input type="tel" class="form-control" id="inputPhone" asp-for="Input.Phone"
+                               placeholder="Номер телефона" pattern="0[0-9]{9}" required>
+                        <span asp-validation-for="Input.Phone" class="text-danger"></span>
+                    </div>
+                    <button type="submit" value="Create" class="submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+        <div class="contacts__contact-info contact-info">
+            <h4 class="contact-info__title">Контактная информация</h4>
+            <div class="contact-info__content">
+                <div class="contact-info__place place">
+                    <div class="place__address">
+                        <h5 class="place__address__title">Адрес:</h5>
+                        <p class="place__address__address">ул. Дерибасовская 12</p>
+                        <p class="place__address__phone">(053) 910-11-10</p>
+                    </div>
+                    <div class="place__schedule">
+                        <h5 class="place__schedule__title">График работы:</h5>
+                        <p class="place__schedule__time">Пн.-Пт. : 8:00 - 22:00</p>
+                        <p class="place__schedule__time">Сб.-Вс. : 9:00 - 00:00</p>
+                    </div>
+                </div>
+                <div class="contact-info__map" id="map">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuMjtEd8ltByAMs1f440xBZQgCBjOy8mk&callback=initMap&libraries=&v=weekly"
+        defer>
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+<!--<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.Name" class="control-label"></label>
+                <input asp-for="Input.Name" class="form-control" />
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Phone" class="control-label"></label>
+                <input asp-for="Input.Phone" class="form-control" />
+                <span asp-validation-for="Input.Phone" class="text-danger"></span>
+            </div>-->
+            @*<div class="form-group">
+                <label asp-for="LiveOrder.DateTime" class="control-label"></label>
+                <input asp-for="LiveOrder.DateTime" class="form-control" />
+                <span asp-validation-for="LiveOrder.DateTime" class="text-danger"></span>
+            </div>*@
+            <!--<div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>-->
+
