@@ -1,0 +1,71 @@
+﻿@page
+@model GSTICK.Pages.Games.GamesModel
+
+@{
+    ViewData["Title"] = "Игры";
+}
+<link rel="stylesheet" href="~/css/games.css" />
+
+<div class="games">
+    <h3 class="games__title">Игры</h3>
+    <div class="games__tabs games-tabs">
+        <ul class="nav nav-tabs games-tabs__tabs-list" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                   aria-controls="home" aria-selected="true">Все</a>
+            </li>
+            @foreach (var category in Model.Categories)
+            {
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="@(category.Id.ToString() + "-tab")" data-toggle="tab" href="@("#tab-" + category.Id.ToString())" role="tab"
+                       aria-controls="@(category.Id.ToString())" aria-selected="false">@(category.Name)</a>
+                </li>
+            }
+        </ul>
+        <div class="tab-content games-tabs__tabs-content">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="games-tabs__game-list">
+                    @foreach (var game in Model.Games)
+                    {
+                        var imageName = game.Images.Find(image => image.IsHead == true).Name;
+                        <div class="game">
+                            <img src=@("~/images/"+imageName) alt=@(imageName) class="game__photo" asp-append-version="true">
+                            <a href="#" class="game__title stretched-link" onclick="GetGameDetails('?handler=GameDetails&id=@(game.Id)')">@(game.Name)</a>
+                        </div>
+                    }
+                </div>
+            </div>
+            @foreach (var category in Model.Categories)
+            {
+                <div class="tab-pane fade" id="@("tab-"+category.Id.ToString())" role="tabpanel" aria-labelledby="@(category.Id.ToString() + "-tab")">
+                    <div class="games-tabs__game-list">
+                        @foreach (var game in category.Games)
+                        {
+                            var imageName = game.Game.Images.Find(image => image.IsHead == true).Name;
+                            <div class="game">
+                                <img src=@("~/images/"+imageName) alt=@(imageName) class="game__photo" asp-append-version="true">
+                                <a href="#" class="game__title stretched-link" onclick="GetGameDetails('?handler=GameDetails&id=@(game.GameId)')">@(game.Game.Name)</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="GameDetailsModal" tabindex="-1" aria-labelledby="GameDetailsModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

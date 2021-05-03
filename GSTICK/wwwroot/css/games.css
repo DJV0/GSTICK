@@ -1,0 +1,153 @@
+.games__title {
+    font-family: 'Alegreya Sans SC',
+        sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 28px;
+    letter-spacing: 3px;
+    color: #f7f7f7;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: unset;
+}
+
+.games__title::after {
+    display: inline-block;
+    content: "";
+    width: 135px;
+    height: 5px;
+    border-radius: 1px;
+    background-color: #d96523;
+    margin-top: -5px;
+}
+
+.nav-tabs {
+    border-bottom-color: #bf754b;
+}
+
+.nav-tabs .nav-link {
+    font-family: 'Alegreya Sans SC',
+        sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.7px;
+    color: #f7f7f7;
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.nav-tabs .nav-link.active {
+    color: #d96523;
+    background-color: unset;
+    border: none;
+    border-bottom: solid 3px #d96523;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #bf754b;
+}
+
+.games-tabs__tabs-list {
+    margin-bottom: 6px;
+}
+
+.games-tabs__game-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.game {
+    max-width: 198px;
+    flex: 1 1 16%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.game:not(:nth-child(5n)) {
+    margin-right: 4%;
+}
+
+.game__photo {
+    width: 100%;
+}
+
+.game__title {
+    font-family: 'Alegreya Sans SC',
+        sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.7px;
+    text-align: center;
+    color: #f7f7f7;
+    display: block;
+    margin-top: 4px;
+}
+
+#GameDetailsModal .modal-content {
+    background-color: #4c2c6c;
+}
+
+#GameDetailsModal .modal-header {
+    position: absolute;
+    right: 1px;
+    z-index: 1;
+    border-bottom: unset;
+}
+
+#GameDetailsModal .modal-header>button {
+    color: #f7f7f7;
+}
+
+#GameDetailsModal .modal-body {
+    padding: 1rem 0;
+    margin: 0 1.3rem;
+}
+
+#GameDetailsModal .modal-body__content {
+    display: flex;
+}
+
+.game-details__image {
+    flex: 1 1 30%;
+    margin-right: 3%;
+}
+
+.game-details__content {
+    flex: 1 1 70%;
+}
+
+.game-details__title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: 0.29px;
+    color: #f7f7f7;
+    text-transform: uppercase;
+}
+
+.game-details__joystick-number,
+.game-details__text {
+    font-size: 15px;
+    line-height: 20px;
+    text-align: left;
+    color: #f7f7f7;
+}
+
+.game-details__text {
+    margin: 1.3rem 0;
+}
+
+.game-details__joystick-number {
+    margin-bottom: unset;
+}
+
+.game-details__joystick-number>span {
+    background: url("../img/joystick-icon.svg") right no-repeat;
+    padding: 0 30px 3px 0;
+}
