@@ -34,6 +34,7 @@ namespace GSTICK
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseMySQL(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddAuthentication()
